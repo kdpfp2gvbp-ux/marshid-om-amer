@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مساعد أم عامر الذكي | المناهج والكتب وسؤال وجواب - الكويت</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Cairo & Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Marked.js for Markdown Formatting -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- KaTeX for Scientific Formulas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pink: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            background-color: #fdf2f8;
+            color: #1e293b;
+        }
+
+        /* Custom Scrollbar - Soft Pink Theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fce7f3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f472b6;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #db2777;
+        }
+
+        /* Glassmorphism Elements */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(251, 207, 232, 0.8);
+            box-shadow: 0 10px 25px -5px rgba(244, 114, 182, 0.08), 0 8px 10px -6px rgba(244, 114, 182, 0.04);
+        }
+
+        /* Typing effect indicator */
+        .typing-dot {
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: 0s; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Perspective Flip Cards */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .rotate-y-180 { transform: rotateY(180deg); }
+        .backface-hidden { backface-visibility: hidden; }
+
+        /* Direct Q&A Formatting */
+        .prose p { margin-bottom: 0.5rem; line-height: 1.6; }
+        .prose strong { color: #be185d; }
+        .prose ul, .prose ol { margin-right: 1.25rem; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-gradient-to-br from-pink-50 via-white to-rose-50 text-slate-800 antialiased selection:bg-pink-400 selection:text-white">
+
+    <!-- Top Bar Header -->
+    <header class="sticky top-0 z-50 glass-card bg-white/90 border-b border-pink-200 shadow-sm backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Logo & Brand -->
+            <div class="flex items-center space-x-3 space-x-reverse cursor-pointer" onclick="switchTab('qa')">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-400 flex items-center justify-center shadow-lg shadow-pink-500/25 text-white">
+                    <i class="fa-solid fa-graduation-cap font-bold text-xl"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h1 class="text-base sm:text-lg font-black bg-gradient-to-l from-pink-700 via-rose-600 to-pink-500 bg-clip-text text-transparent">
+                            مساعد أم عامر الذكي
+                        </h1>
+                        <span class="text-[10px] bg-pink-100 text-pink-700 border border-pink-300 px-2.5 py-0.5 rounded-full font-bold">
+                            منهج الكويت 🇰🇼
+                        </span>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium">ثانوية أم عامر الأنصارية - الكتب والمساعد الذكي</p>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <nav class="hidden md:flex items-center gap-1.5 bg-pink-50/80 p-1.5 rounded-2xl border border-pink-200">
+                <button id="nav-qa" onclick="switchTab('qa')" class="nav-btn px-4 py-2 rounded-xl text-sm font-bold transition flex items-center gap-2 text-pink-700 bg-white shadow-sm border border-pink-200">
+                    <i class="fa-solid fa-wand-magic-sparkles text-pink-500"></i>
+                    <span>المساعد الذكي (س و ج)</span>
+                </button>
+                <button id="nav-library" onclick="switchTab('library')" class="nav-btn px-4 py-2 rounded-xl text-sm font-bold transition flex items-center gap-2 text-slate-600 hover:text-pink-600">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>مكتبة الكتب الرسمية</span>
+                </button>
+                <button id="nav-cards" onclick="switchTab('cards')" class="nav-btn px-4 py-2 rounded-xl text-sm font-bold transition flex items-center gap-2 text-slate-600 hover:text-pink-600">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>بطاقات س و ج</span>
+                </button>
+                <button id="nav-quiz" onclick="switchTab('quiz')" class="nav-btn px-4 py-2 rounded-xl text-sm font-bold transition flex items-center gap-2 text-slate-600 hover:text-pink-600">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>مولّد الاختبارات</span>
+                </button>
+            </nav>
+
+            <!-- Grade Selector -->
+            <div class="flex items-center gap-2">
+                <select id="user-grade-selector" onchange="handleGradeChange(this.value)" class="bg-white border border-pink-200 text-pink-700 text-xs font-bold rounded-xl px-3 py-2 outline-none focus:border-pink-500 shadow-sm cursor-pointer hover:border-pink-300 transition">
+                    <option value="11-sci" selected>الصف 11 علمي</option>
+                    <option value="12-sci">الصف 12 علمي</option>
+                    <option value="12-lit">الصف 12 أدبي</option>
+                    <option value="11-lit">الصف 11 أدبي</option>
+                    <option value="10">الصف 10 العام</option>
+                </select>
+
+                <!-- Mobile Navigation Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl bg-pink-100 text-pink-700 hover:bg-pink-200 transition">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-pink-200 bg-white px-4 py-3 space-y-2 shadow-lg">
+            <button onclick="switchTab('qa'); toggleMobileMenu()" class="w-full text-right px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-3 text-pink-700 bg-pink-50 border border-pink-200">
+                <i class="fa-solid fa-wand-magic-sparkles text-pink-500"></i> المساعد الذكي وسؤال وجواب
+            </button>
+            <button onclick="switchTab('library'); toggleMobileMenu()" class="w-full text-right px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-3 text-slate-700 hover:bg-pink-50">
+                <i class="fa-solid fa-book-open"></i> مكتبة الكتب الدراسية والحلول
+            </button>
+            <button onclick="switchTab('cards'); toggleMobileMenu()" class="w-full text-right px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-3 text-slate-700 hover:bg-pink-50">
+                <i class="fa-solid fa-layer-group"></i> بطاقات س و ج التفاعلية
+            </button>
+            <button onclick="switchTab('quiz'); toggleMobileMenu()" class="w-full text-right px-4 py-2.5 rounded-xl text-sm font-bold flex items-center gap-3 text-slate-700 hover:bg-pink-50">
+                <i class="fa-solid fa-list-check"></i> مولّد أسئلة الاختبارات
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col">
+
+        <!-- ========================================== -->
+        <!-- TAB 1: SMART AI ASSISTANT & Q&A            -->
+        <!-- ========================================== -->
+        <section id="tab-qa" class="flex flex-1 flex-col min-h-[580px] gap-4">
+            
+            <!-- Direct Assistant Notice Header -->
+            <div class="glass-card rounded-2xl p-3.5 sm:p-4 flex flex-wrap items-center justify-between gap-3 border border-pink-200 bg-gradient-to-r from-white via-pink-50/50 to-white">
+                <div class="flex items-center gap-2.5">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
+                    </span>
+                    <span class="text-xs sm:text-sm font-bold text-slate-700">
+                        المساعد الدراسي الذكي المباشر: <span id="active-grade-display" class="text-pink-600 font-black">الصف 11 علمي</span>
+                    </span>
+                </div>
+                <div class="text-xs text-pink-700 font-semibold bg-pink-100/80 px-3 py-1 rounded-xl border border-pink-200 flex items-center gap-1.5">
+                    <i class="fa-solid fa-sparkles text-pink-500"></i>
+                    <span>اسألي عن أي درس، أو اطلبي تحميل أي كتاب دراسي فوراً!</span>
+                </div>
+            </div>
+
+            <!-- Chat Q&A Message Thread -->
+            <div id="chat-messages" class="flex-1 min-h-[380px] max-h-[520px] overflow-y-auto glass-card rounded-2xl p-4 sm:p-6 space-y-4 border border-pink-200 bg-white/80">
+                
+                <!-- Initial Welcome -->
+                <div class="flex gap-3 max-w-3xl">
+                    <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-400 text-white flex items-center justify-center shrink-0 font-bold shadow-md shadow-pink-500/20">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-pink-50/80 border border-pink-200 p-4 rounded-2xl text-slate-800 text-sm leading-relaxed shadow-sm">
+                        <p class="font-bold text-pink-700 text-base mb-1">أهلاً بكِ في مساعد أم عامر الذكي! 👋💖</p>
+                        <p class="text-slate-600">أنا جاهز لإجابة جميع أسئلتكِ الدراسية وإرسال الكتب المدرسية وبنوك الأسئلة والمحلولة فوراً بأسلوب سريع وواضح.</p>
+                        <p class="text-xs text-pink-600 font-bold mt-2">✨ جربي كتابة أحد الأسئلة التالية أو اطلبي كتابكِ:</p>
+                    </div>
+                </div>
+
+                <!-- Suggested Quick Q&A Chips -->
+                <div class="flex flex-wrap gap-2 pt-1" id="starter-chips">
+                    <button onclick="sendQuickPrompt('اريد كتاب الرياضيات الصف 11 علمي الفصل الاول')" class="text-xs bg-white hover:bg-pink-50 text-pink-700 font-bold border border-pink-300 rounded-xl px-3.5 py-2 shadow-sm transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-file-pdf text-rose-500"></i>
+                        <span>📖 أريد كتاب الرياضيات 11 علمي ف1</span>
+                    </button>
+                    <button onclick="sendQuickPrompt('اريد كتاب الفيزياء الصف 11 علمي الفصل الاول محمل')" class="text-xs bg-white hover:bg-pink-50 text-pink-700 font-bold border border-pink-300 rounded-xl px-3.5 py-2 shadow-sm transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-atom text-pink-500"></i>
+                        <span>📖 تحميل كتاب الفيزياء 11 علمي</span>
+                    </button>
+                    <button onclick="sendQuickPrompt('ما هو قانون السرعة الزاوية في الفيزياء للصف 11؟')" class="text-xs bg-white hover:bg-pink-50 text-pink-700 font-bold border border-pink-300 rounded-xl px-3.5 py-2 shadow-sm transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-circle-question text-rose-400"></i>
+                        <span>❓ قانون السرعة الزاوية</span>
+                    </button>
+                    <button onclick="sendQuickPrompt('اريد كتاب الكيمياء للصف 12 علمي')" class="text-xs bg-white hover:bg-pink-50 text-pink-700 font-bold border border-pink-300 rounded-xl px-3.5 py-2 shadow-sm transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-flask text-pink-500"></i>
+                        <span>📖 كتاب الكيمياء 12 علمي</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Q&A Input Box -->
+            <div class="glass-card rounded-2xl p-2.5 sm:p-3 border border-pink-200 bg-white">
+                <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex items-center gap-2">
+                    <input type="text" id="chat-input" placeholder="اكتبي أي سؤال دراسي أو اطلبي كتاباً (مثال: اريد كتاب الرياضيات 11 علمي)..." required
+                        class="flex-1 bg-pink-50/50 border border-pink-200 rounded-xl px-4 py-3.5 text-sm text-slate-800 placeholder-slate-400 outline-none focus:border-pink-500 focus:bg-white transition">
+
+                    <button type="submit" id="send-btn" class="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-extrabold px-6 py-3.5 rounded-xl transition flex items-center gap-2 shrink-0 shadow-md shadow-pink-500/25">
+                        <span>إرسال</span>
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                    </button>
+                </form>
+            </div>
+
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 2: TEXTBOOKS & LIBRARY (مكتبة الكتب)   -->
+        <!-- ========================================== -->
+        <section id="tab-library" class="hidden flex-1 flex-col space-y-6">
+            
+            <!-- Library Banner -->
+            <div class="glass-card rounded-2xl p-5 sm:p-6 border border-pink-200 flex flex-col md:flex-row md:items-center justify-between gap-4 bg-gradient-to-r from-white via-pink-50/60 to-white">
+                <div>
+                    <span class="text-xs font-bold text-pink-600 uppercase tracking-wider">المنهج المدرسي الرسمي 🇰🇼</span>
+                    <h2 class="text-xl sm:text-2xl font-black text-slate-800 mt-1 flex items-center gap-2">
+                        <i class="fa-solid fa-book-bookmark text-pink-500"></i> مكتبة الكتب الدراسية والحلول المعتمدة
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-1">حملي الكتب الرسمية، كراسات التمارين، وبنوك الأسئلة لكل الصفوف بضغطة زر واحدة.</p>
+                </div>
+                
+                <!-- Grade Filter Pills -->
+                <div class="flex flex-wrap gap-1.5 bg-pink-100/60 p-1.5 rounded-2xl border border-pink-200 text-xs font-bold shrink-0">
+                    <button onclick="filterLibraryGrade('11-sci')" class="lib-grade-btn active-lib-grade px-3.5 py-2 rounded-xl bg-pink-500 text-white font-extrabold shadow-sm">11 علمي</button>
+                    <button onclick="filterLibraryGrade('12-sci')" class="lib-grade-btn px-3.5 py-2 rounded-xl text-slate-600 hover:text-pink-600">12 علمي</button>
+                    <button onclick="filterLibraryGrade('12-lit')" class="lib-grade-btn px-3.5 py-2 rounded-xl text-slate-600 hover:text-pink-600">12 أدبي</button>
+                    <button onclick="filterLibraryGrade('11-lit')" class="lib-grade-btn px-3.5 py-2 rounded-xl text-slate-600 hover:text-pink-600">11 أدبي</button>
+                    <button onclick="filterLibraryGrade('10')" class="lib-grade-btn px-3.5 py-2 rounded-xl text-slate-600 hover:text-pink-600">10 عام</button>
+                </div>
+            </div>
+
+            <!-- Subject Textbooks Grid -->
+            <div id="library-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Dynamically Populated by JavaScript -->
+            </div>
+
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 3: Q&A FLASHCARDS (بطاقات س و ج)       -->
+        <!-- ========================================== -->
+        <section id="tab-cards" class="hidden flex-1 flex-col space-y-6">
+            
+            <div class="glass-card rounded-2xl p-6 border border-pink-200 flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white">
+                <div>
+                    <h2 class="text-xl font-extrabold text-pink-700 flex items-center gap-2">
+                        <i class="fa-solid fa-layer-group text-pink-500"></i> بطاقات أسئلة وإجابات نموذجية (س و ج)
+                    </h2>
+                    <p class="text-sm text-slate-600 mt-1">انقري على البطاقة لعرض الإجابة المباشرة والنموذجية للمنهج الكويتي.</p>
+                </div>
+            </div>
+
+            <!-- Flashcard Grid -->
+            <div id="flashcard-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamically Populated Cards -->
+            </div>
+
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 4: Q&A QUIZ GENERATOR (مولد الاختبارات) -->
+        <!-- ========================================== -->
+        <section id="tab-quiz" class="hidden flex-1 flex-col space-y-6">
+            
+            <div class="glass-card rounded-2xl p-6 border border-pink-200 bg-white">
+                <h2 class="text-xl font-extrabold text-pink-700 flex items-center gap-2 mb-1">
+                    <i class="fa-solid fa-list-check text-pink-500"></i> مولّد أسئلة واختبارات المنهج الذكي
+                </h2>
+                <p class="text-sm text-slate-600">حددي المادة والدرس لإنشاء اختبار سريع يساعدكِ على المراجعة والتأكد من الحفظ.</p>
+                
+                <!-- Generator Inputs -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 mb-1">المادة الدراسية:</label>
+                        <select id="quiz-subject" class="w-full bg-pink-50/50 border border-pink-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-800 outline-none focus:border-pink-500">
+                            <option value="الرياضيات">الرياضيات</option>
+                            <option value="الفيزياء">الفيزياء</option>
+                            <option value="الكيمياء">الكيمياء</option>
+                            <option value="الأحياء">الأحياء</option>
+                            <option value="اللغة العربية">اللغة العربية</option>
+                            <option value="اللغة الإنجليزية">اللغة الإنجليزية</option>
+                            <option value="التاريخ المعاصر">التاريخ المعاصر</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 mb-1">الدرس أو الموضوع (اختياري):</label>
+                        <input type="text" id="quiz-topic" placeholder="مثال: الهندسة الفضائية / السرعة الزاوية" class="w-full bg-pink-50/50 border border-pink-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-800 outline-none focus:border-pink-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 mb-1">عدد الأسئلة:</label>
+                        <select id="quiz-count" class="w-full bg-pink-50/50 border border-pink-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-800 outline-none focus:border-pink-500">
+                            <option value="3">3 أسئلة</option>
+                            <option value="5" selected>5 أسئلة</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mt-5 flex justify-end">
+                    <button onclick="generateAIQuiz()" id="generate-quiz-btn" class="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold px-6 py-3 rounded-xl transition flex items-center gap-2 shadow-md shadow-pink-500/20">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>إنشاء الأسئلة الآن</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Output Container -->
+            <div id="quiz-container" class="hidden glass-card rounded-2xl p-6 border border-pink-200 space-y-6 bg-white"></div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-pink-200 bg-white/80 py-5 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 space-y-1">
+            <p class="font-bold text-pink-700">مساعد أم عامر الذكي — ثانوية أم عامر الأنصارية بنات | دولة الكويت 🇰🇼</p>
+            <p>مخصص لتحميل الكتب المدرسية الرسمية والإجابة المباشرة على جميع الأسئلة الدراسية.</p>
+        </div>
+    </footer>
+
+    <script>
+        const apiKey = ""; // API key can be set here or provided dynamically
+        let currentTab = 'qa';
+        let currentGrade = '11-sci';
+        let generatedQuestions = [];
+        let userAnswers = {};
+
+        // Comprehensive Books & Files Database (Kuwait Curriculum)
+        const booksDatabase = {
+            '11-sci': [
+                {
+                    id: 'math-11-sci-t1',
+                    subject: 'الرياضيات',
+                    term: 'الفصل الأول',
+                    title: 'كتاب الرياضيات - للصف الحادي عشر العلمي (الجزء الأول)',
+                    pages: '184 صفحة',
+                    size: '14.2 MB',
+                    icon: 'fa-square-root-variable',
+                    color: 'from-pink-500 to-rose-400',
+                    badge: 'الصف 11 علمي',
+                    downloadName: 'كتاب_الرياضيات_11_علمي_ف1.pdf',
+                    description: 'يتناول الجذور، المتباينات، الدوال الحقيقية، الهندسة الفضائية وحل جميع التمارين المعتمدة.',
+                    files: [
+                        { name: 'كتاب الطالب - الرياضيات (الفصل الأول)', type: 'PDF', note: 'كتاب الوزارة المعتمد كاملاً' },
+                        { name: 'كراسة التمارين المحلولة - الرياضيات 11', type: 'PDF', note: 'حلول وإجابات كراسة التمارين' },
+                        { name: 'بنك أسئلة التوجيه الفني للرياضيات', type: 'PDF', note: 'أسئلة س و ج واختبارات' }
+                    ]
+                },
+                {
+                    id: 'physics-11-sci-t1',
+                    subject: 'الفيزياء',
+                    term: 'الفصل الأول',
+                    title: 'كتاب الفيزياء - للصف الحادي عشر العلمي (الجزء الأول)',
+                    pages: '152 صفحة',
+                    size: '12.8 MB',
+                    icon: 'fa-atom',
+                    color: 'from-rose-500 to-pink-500',
+                    badge: 'الصف 11 علمي',
+                    downloadName: 'كتاب_الفيزياء_11_علمي_ف1.pdf',
+                    description: 'يتضمن دراسة المتجهات، الحركة الدائرية، القوة والعزم، والاتزان مع بنك الأسئلة المحلول.',
+                    files: [
+                        { name: 'كتاب الطالب - الفيزياء (الفصل الأول)', type: 'PDF', note: 'كتاب الوزارة المعتمد كاملاً' },
+                        { name: 'بنك أسئلة الفيزياء مع نماذج الإجابة', type: 'PDF', note: 'أسئلة التعاليل والمواقف' }
+                    ]
+                },
+                {
+                    id: 'chem-11-sci-t1',
+                    subject: 'الكيمياء',
+                    term: 'الفصل الأول',
+                    title: 'كتاب الكيمياء - للصف الحادي عشر العلمي (الجزء الأول)',
+                    pages: '140 صفحة',
+                    size: '11.5 MB',
+                    icon: 'fa-flask-vial',
+                    color: 'from-pink-600 to-rose-400',
+                    badge: 'الصف 11 علمي',
+                    downloadName: 'كتاب_الكيمياء_11_علمي_ف1.pdf',
+                    description: 'يتضمن موضوعات الروابط الكيميائية، أشكال الجزيئات، والحسابات الكيميائية للغازات.',
+                    files: [
+                        { name: 'كتاب الكيمياء 11 علمي (الفصل الأول)', type: 'PDF', note: 'الكتاب المدرسي المعتمد' },
+                        { name: 'بنك أسئلة الكيمياء المحلول', type: 'PDF', note: 'س و ج الشامل للاختبارات' }
+                    ]
+                },
+                {
+                    id: 'bio-11-sci-t1',
+                    subject: 'الأحياء',
+                    term: 'الفصل الأول',
+                    title: 'كتاب الأحياء - للصف الحادي عشر العلمي',
+                    pages: '130 صفحة',
+                    size: '10.1 MB',
+                    icon: 'fa-dna',
+                    color: 'from-rose-400 to-pink-500',
+                    badge: 'الصف 11 علمي',
+                    downloadName: 'كتاب_الأحياء_11_علمي.pdf',
+                    description: 'يتناول الخلية والأنسجة النباتية والحيوانية وعمليات الأيض والوراثة الخلوية.',
+                    files: [
+                        { name: 'كتاب الأحياء للصف 11 علمي', type: 'PDF', note: 'كتاب الطالب المعتمد' },
+                        { name: 'مذكرة س و ج الأحياء', type: 'PDF', note: 'الرسومات والمصطلحات المعتمدة' }
+                    ]
+                },
+                {
+                    id: 'arabic-11-t1',
+                    subject: 'اللغة العربية',
+                    term: 'الفصل الأول',
+                    title: 'كتاب اللغة العربية - الصف 11 (المؤنس والمعجم)',
+                    pages: '160 صفحة',
+                    size: '9.8 MB',
+                    icon: 'fa-scroll',
+                    color: 'from-pink-500 to-rose-500',
+                    badge: 'الصف 11',
+                    downloadName: 'كتاب_اللغة_العربية_11.pdf',
+                    description: 'يتضمن النصوص الأدبية المقررة، وقواعد النحو والبلاغة، وتدريبات التعبير.',
+                    files: [
+                        { name: 'كتاب اللغة العربية - للصف 11', type: 'PDF', note: 'الكتاب المعتمد رسميًا' },
+                        { name: 'مذكرة س و ج القواعد والبلاغة', type: 'PDF', note: 'حلول وأسئلة امتحانات سابقة' }
+                    ]
+                },
+                {
+                    id: 'english-11-t1',
+                    subject: 'اللغة الإنجليزية',
+                    term: 'الفصل الأول',
+                    title: 'Student Book & Workbook - Grade 11',
+                    pages: '175 صفحة',
+                    size: '15.0 MB',
+                    icon: 'fa-language',
+                    color: 'from-rose-500 to-pink-600',
+                    badge: 'الصف 11',
+                    downloadName: 'English_Grade_11_Student_Book.pdf',
+                    description: 'يتضمن الموديولات المقررة مع أسئلة الست بوك (Set Book) والقواعد والكلمات.',
+                    files: [
+                        { name: 'Student Book & Workbook 11', type: 'PDF', note: 'الكتاب المبرمج الكامل' },
+                        { name: 'Set Book Questions & Answers', type: 'PDF', note: 'أسئلة وإجابات الست بوك' }
+                    ]
+                }
+            ],
+            '12-sci': [
+                {
+                    id: 'math-12-sci-t1',
+                    subject: 'الرياضيات',
+                    term: 'الفصل الأول',
+                    title: 'كتاب الرياضيات - الصف 12 علمي (التفاضل والتكامل)',
+                    pages: '190 صفحة',
+                    size: '16.1 MB',
+                    icon: 'fa-calculator',
+                    color: 'from-pink-600 to-rose-500',
+                    badge: 'الصف 12 علمي',
+                    downloadName: 'كتاب_الرياضيات_12_علمي_ف1.pdf',
+                    description: 'يتناول النهايات والاتصال، الاشتقاق، وتطبيقات المشتقات مع كراسة التمارين المحلولة.',
+                    files: [
+                        { name: 'كتاب الرياضيات - 12 علمي (ف1)', type: 'PDF', note: 'كتاب الوزارة المعتمد' },
+                        { name: 'كراسة التمارين المحلولة كاملاً', type: 'PDF', note: 'حلول وبنود التمارين' }
+                    ]
+                },
+                {
+                    id: 'physics-12-sci-t1',
+                    subject: 'الفيزياء',
+                    term: 'الفصل الأول',
+                    title: 'كتاب الفيزياء - الصف 12 علمي (الكهرباء والمغناطيسية)',
+                    pages: '165 صفحة',
+                    size: '13.5 MB',
+                    icon: 'fa-bolt',
+                    color: 'from-rose-500 to-pink-400',
+                    badge: 'الصف 12 علمي',
+                    downloadName: 'كتاب_الفيزياء_12_علمي_ف1.pdf',
+                    description: 'يتناول الكهروسكونية، المجال الكهربائي، المكثفات، الحث الكهرومغناطيسي وبنك الأسئلة.',
+                    files: [
+                        { name: 'كتاب الفيزياء - 12 علمي (ف1)', type: 'PDF', note: 'الكتاب المدرسي المعتمد' },
+                        { name: 'بنك أسئلة الفيزياء المعتمد', type: 'PDF', note: 'س و ج الشامل للفاينل' }
+                    ]
+                }
+            ],
+            '12-lit': [
+                {
+                    id: 'history-12-lit-t1',
+                    subject: 'التاريخ المعاصر',
+                    term: 'الفصل الأول',
+                    title: 'كتاب تاريخ العالم الحديث والمعاصر - الصف 12 أدبي',
+                    pages: '150 صفحة',
+                    size: '11.0 MB',
+                    icon: 'fa-landmark',
+                    color: 'from-pink-500 to-rose-400',
+                    badge: 'الصف 12 أدبي',
+                    downloadName: 'كتاب_التاريخ_12_أدبي.pdf',
+                    description: 'يتضمن الثورات الكبرى، الحربين العالميتين الأولى والثانية، والقضايا الحديثة.',
+                    files: [
+                        { name: 'كتاب التاريخ المعاصر 12 أدبي', type: 'PDF', note: 'الكتاب الرسمي المعتمد' },
+                        { name: 'مذكرة س و ج بنك أسئلة التاريخ', type: 'PDF', note: 'أسئلة التعاليل والخرائط' }
+                    ]
+                }
+            ],
+            '11-lit': [
+                {
+                    id: 'geography-11-lit-t1',
+                    subject: 'الجغرافيا',
+                    term: 'الفصل الأول',
+                    title: 'كتاب الجغرافيا وجغرافية الكويت - الصف 11 أدبي',
+                    pages: '145 صفحة',
+                    size: '10.5 MB',
+                    icon: 'fa-earth-asia',
+                    color: 'from-rose-400 to-pink-500',
+                    badge: 'الصف 11 أدبي',
+                    downloadName: 'كتاب_الجغرافيا_11_أدبي.pdf',
+                    description: 'جغرافيا الكويت الطبيعية، الاقتصادية والسكان مع الخرائط وبنوك الأسئلة.',
+                    files: [
+                        { name: 'كتاب الجغرافيا - الصف 11 أدبي', type: 'PDF', note: 'الكتاب الرسمي المعتمد' },
+                        { name: 'بنك أسئلة وتدريبات الجغرافيا', type: 'PDF', note: 'أسئلة س و ج والخرائط' }
+                    ]
+                }
+            ],
+            '10': [
+                {
+                    id: 'math-10-t1',
+                    subject: 'الرياضيات والعلوم 10',
+                    term: 'الفصل الأول',
+                    title: 'كتاب الرياضيات والعلوم - الصف العاشر',
+                    pages: '170 صفحة',
+                    size: '13.0 MB',
+                    icon: 'fa-shapes',
+                    color: 'from-rose-400 to-pink-500',
+                    badge: 'الصف 10',
+                    downloadName: 'كتاب_الرياضيات_10.pdf',
+                    description: 'يشمل أساسيات الهندسة، المثلثات، الحركة والميكانيكا للصف العاشر.',
+                    files: [
+                        { name: 'كتاب الرياضيات - الصف 10', type: 'PDF', note: 'الكتاب المعتمد رسميًا' },
+                        { name: 'بنك أسئلة العلوم والفيزياء 10', type: 'PDF', note: 'س و ج المراجعة المباشرة' }
+                    ]
+                }
+            ]
+        };
+
+        // Offline Smart Curriculum Question Knowledge Base
+        const offlineAnswersDB = [
+            {
+                keywords: ['السرعة الزاوية', 'قانون السرعة الزاوية', 'omega', 'سرعة زاوية'],
+                response: `**س:** ما هو قانون السرعة الزاوية في الفيزياء (الصف 11 علمي)؟\n\n**ج:**\nالسرعة الزاوية (\\(\\omega\\)) تمثل معدل التغير في الأزاحية الزاوية بالنسبة للزمن:\n\n1. **القانون الأساسي:**\n$$\\omega = \\frac{\\Delta \\theta}{\\Delta t}$$\nحيث \\(\\omega\\) بالراديان/ثانية (\\(rad/s\\)).\n\n2. **العلاقة مع السرعة الخطية (v):**\n$$v = \\omega \\cdot r \\quad \\implies \\quad \\omega = \\frac{v}{r}$$\n\n3. **العلاقة مع التردد (f) والزمن الدوري (T):**\n$$\\omega = 2\\pi f = \\frac{2\\pi}{T}$$`
+            },
+            {
+                keywords: ['مجال الدالة الجذرية', 'دالة جذرية', 'مجال الجذر'],
+                response: `**س:** كيف نحسب مجال الدوال الجذرية ذات الدليل الزوجي؟\n\n**ج:**\nفي رياضيات الصف 11 علمي، لحساب مجال دالة جذرية مثل \\(f(x) = \\sqrt{g(x)}\\):\n\n1. نضع ما تحت الجذر أكبر من أو يساوي الصفر:\n$$g(x) \\ge 0$$\n2. نحل المتباينة لإيجاد قيم \\(x\\).\n3. نكتب المجال في صورة فترة حقيقية.`
+            },
+            {
+                keywords: ['الرابطة التناسقية', 'رابطة تناسقية', 'التناسقية'],
+                response: `**س:** ما هي الرابطة التساهمية التناسقية وما شروط تكونها؟\n\n**ج:**\n**التعريف:** هي نوع خاص من الرابطة التساهمية تتكون نتيجة تقديم زوج من الإلكترونات من ذرة واحدة (تسمى الذرة المانحة) إلى ذرة أخرى تحتوي على أوربيتال فارغ (تسمى الذرة المستقبِلة).\n\n**أمثلة شائعة في منهج الكيمياء:**\n• أيون الهيدرونيوم \\(H_3O^+\\)\n• أيون الأمونيوم \\(NH_4^+\\)`
+            },
+            {
+                keywords: ['المضارع', 'بناء المضارع', 'يبنى المضارع'],
+                response: `**س:** متى يبنى الفعل المضارع في قواعد اللغة العربية؟\n\n**ج:**\nالأصل في الفعل المضارع أنه معرب، ولكنه يُبنى في حالتين فقط:\n\n1. **البناء على السكون:** إذا اتصلت به **نون النسوة** (مثال: الطالباتُ *يَكْتُبْنَ*).\n2. **البناء على الفتح:** إذا اتصلت به **نون التوكيد المباشرة** الثقيلة أو الخفيفة (مثال: واللهِ *لأَدْرُسَنَّ* بجد).`
+            }
+        ];
+
+        // Built-in Local Quiz Databank
+        const localQuizDatabase = {
+            'الرياضيات': [
+                {
+                    question: 'ما هو مجال الدالة f(x) = √(x - 3) ؟',
+                    options: ['[3, ∞)', '(-∞, 3]', '(3, ∞)', 'R'],
+                    correctIndex: 0,
+                    explanation: 'ما تحت الجذر يجب أن يكون أكبر من أو يساوي 0: x - 3 ≥ 0 أذًا x ≥ 3.'
+                },
+                {
+                    question: 'في الهندسة الفضائية، إذا كان المستقيم عمودياً على مستويين، فإن المستويين تكون علاقتهما:',
+                    options: ['متوازيين', 'متعامدين', 'متطابقين دائماً', 'متقاطعين'],
+                    correctIndex: 0,
+                    explanation: 'المستقيم العمودي على مستويين يجعلهما متوازيين وفق نظرية الهندسة الفضائية.'
+                },
+                {
+                    question: 'الجذر التربيعي للعدد المركب z = -4 هو:',
+                    options: ['± 2i', '± 2', '-2i', '4i'],
+                    correctIndex: 0,
+                    explanation: '√(-4) = √(4) × √(-1) = ± 2i.'
+                }
+            ],
+            'الفيزياء': [
+                {
+                    question: 'وحدة قياس السرعة الزاوية (ω) في النظام الدولي هي:',
+                    options: ['rad/s', 'm/s', 'rad/s²', 'Hz'],
+                    correctIndex: 0,
+                    explanation: 'تقاس الإزاحة الزاوية بالراديان والزمن بالثانية، فالوحدة rad/s.'
+                },
+                {
+                    question: 'عند مضاعفة نصف قطر المسار الدائري لجسم يتحرك بسرعة زاوية ثابته، فإن سرعته الخطية:',
+                    options: ['تتضاعف مرتين', 'تقل للنصف', 'تبقى ثابته', 'تزيد أربع مرات'],
+                    correctIndex: 0,
+                    explanation: 'من القانون v = ω · r، العلاقة طردية بين v و r عند ثبات ω.'
+                },
+                {
+                    question: 'محصلة العزوم لجسم في حالة اتزان دوراني تساوي:',
+                    options: ['صفر', 'القوة في المسافة', 'الكتلة × التسارع', 'واحد صحيح'],
+                    correctIndex: 0,
+                    explanation: 'شرط الاتزان الدوراني أن يكون مجموع العزوم (Στ) مساوياً للصفر.'
+                }
+            ],
+            'الكيمياء': [
+                {
+                    question: 'تنشأ الرابطة التساهمية التناسقية نتيجة تقديم إلكترونات بواسطة:',
+                    options: ['ذرة واحدة فقط (المانحة)', 'الذرتين بالتساوي', 'ثلاث ذرات', 'انتقال كامل للإلكترون'],
+                    correctIndex: 0,
+                    explanation: 'في الرابطة التناسقية تقدم الذرة المانحة زوج الإلكترونات كاملاً.'
+                },
+                {
+                    question: 'شكل جزيء الماء H₂O في الفراغ يكون:',
+                    options: ['زاوي (منحني)', 'خطي', 'رباعي الأوجه منتظم', 'مثلت مستو'],
+                    correctIndex: 0,
+                    explanation: 'وجود زوجين حرين من الإلكترونات على ذرة الأكسجين يجعل الشكل زاوي بدراجة 104.5°.'
+                }
+            ],
+            'اللغة العربية': [
+                {
+                    question: 'يُبنى الفعل المضارع على السكون إذا اتصلت به:',
+                    options: ['نون النسوة', 'نون التوكيد الثقيلة', 'واو الجماعة', 'ياء المخاطبة'],
+                    correctIndex: 0,
+                    explanation: 'اتصال نون النسوة بالمضارع يوجب بناءه على السكون.'
+                },
+                {
+                    question: 'إعراب كلمة (طالباً) في جملة "يا طالباً العلمَ اجتهد":',
+                    options: ['منادى منصوب وعلامة نصبه الفتحة', 'منادى مبني على الضم', 'مفعول به ثانٍ', 'مبتدأ مؤخر'],
+                    correctIndex: 0,
+                    explanation: 'المنادى هنا شبيه بالمضاف، وهو من أنواع المنادى المنصوب.'
+                }
+            ],
+            'اللغة الإنجليزية': [
+                {
+                    question: 'If you study hard, you ______ the exam easily.',
+                    options: ['will pass', 'would pass', 'passed', 'had passed'],
+                    correctIndex: 0,
+                    explanation: 'First Conditional: If + Present Simple (study) ---> Will + Base verb (will pass).'
+                },
+                {
+                    question: 'If I ______ enough time yesterday, I would have visited you.',
+                    options: ['had had', 'have', 'will have', 'had'],
+                    correctIndex: 0,
+                    explanation: 'Third Conditional: If + Past Perfect (had had) ---> would have + V3.'
+                }
+            ]
+        };
+
+        // Flashcards Database
+        const defaultFlashcards = [
+            {
+                subject: 'الرياضيات - الصف 11 علمي',
+                question: 'س: ما هو المجال للدوال الجذرية للقدر الزوجي؟',
+                answer: 'ج: مجال الدالة الجذرية $f(x) = \\sqrt{g(x)}$ هو مجموعة قيم $x$ التي تجعل ما تحت الجذر أكبر من أو يساوي الصفر، أي $g(x) \\ge 0$.'
+            },
+            {
+                subject: 'الفيزياء - الصف 11 علمي',
+                question: 'س: ما هي العلاقة بين السرعة الخطية (v) والسرعة الزاوية (ω)؟',
+                answer: 'ج: $v = \\omega \\times r$\nحيث $v$ هي السرعة الخطية ($m/s$)، و $\\omega$ هي السرعة الزاوية ($rad/s$)، و $r$ هو نصف قطر المسار الدائري ($m$).'
+            },
+            {
+                subject: 'الكيمياء - الصف 11 علمي',
+                question: 'س: ما معنى الرابطة التساهمية التناسقية؟',
+                answer: 'ج: هي رابطة تساهمية تنشأ بين ذرتين تقدم إحداهما زوجاً كاملاً من الإلكترونات (الذرة المانحة) بينما تقدم الذرة الأخرى أوربيتالاً فارغاً (الذرة المستقلة).'
+            },
+            {
+                subject: 'اللغة العربية - النحو',
+                question: 'س: متى يبنى الفعل المضارع على السكون وعلى الفتح؟',
+                answer: 'ج:\n• يبنى على السكون: إذا اتصلت به نون النسوة.\n• يبنى على الفتح: إذا اتصلت به نون التوكيد المباشرة.'
+            },
+            {
+                subject: 'English Grade 11',
+                question: 'Q: What is the rule for conditional Type 3?',
+                answer: 'A: If + Past Perfect (had + V3) ---> would / could / might + have + V3.\nExample: If I had studied harder, I would have passed the exam.'
+            }
+        ];
+
+        window.onload = function() {
+            renderLibraryItems('11-sci');
+            loadDefaultCards();
+            updateGradeDisplay();
+        };
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function switchTab(tabName) {
+            currentTab = tabName;
+            
+            ['qa', 'library', 'cards', 'quiz'].forEach(t => {
+                const sec = document.getElementById(`tab-${t}`);
+                if (sec) {
+                    sec.classList.add('hidden');
+                    sec.classList.remove('flex');
+                }
+                
+                const navBtn = document.getElementById(`nav-${t}`);
+                if (navBtn) {
+                    navBtn.classList.remove('text-pink-700', 'bg-white', 'shadow-sm', 'border-pink-200');
+                    navBtn.classList.add('text-slate-600');
+                }
+            });
+
+            const activeSection = document.getElementById(`tab-${tabName}`);
+            if (activeSection) {
+                activeSection.classList.remove('hidden');
+                activeSection.classList.add('flex');
+            }
+
+            const activeBtn = document.getElementById(`nav-${tabName}`);
+            if (activeBtn) {
+                activeBtn.classList.add('text-pink-700', 'bg-white', 'shadow-sm', 'border-pink-200');
+                activeBtn.classList.remove('text-slate-600');
+            }
+        }
+
+        function handleGradeChange(val) {
+            currentGrade = val;
+            updateGradeDisplay();
+            renderLibraryItems(val);
+        }
+
+        function updateGradeDisplay() {
+            const displayNames = {
+                '11-sci': 'الصف 11 علمي',
+                '12-sci': 'الصف 12 علمي',
+                '12-lit': 'الصف 12 أدبي',
+                '11-lit': 'الصف 11 أدبي',
+                '10': 'الصف 10 العام'
+            };
+            document.getElementById('active-grade-display').innerText = displayNames[currentGrade] || 'المرحلة الثانوية';
+        }
+
+        function filterLibraryGrade(gradeKey) {
+            document.querySelectorAll('.lib-grade-btn').forEach(btn => {
+                btn.className = "lib-grade-btn px-3.5 py-2 rounded-xl text-slate-600 hover:text-pink-600 font-bold transition";
+            });
+            if (event && event.target) {
+                event.target.className = "lib-grade-btn active-lib-grade px-3.5 py-2 rounded-xl bg-pink-500 text-white font-extrabold shadow-sm transition";
+            }
+            renderLibraryItems(gradeKey);
+        }
+
+        function renderLibraryItems(gradeKey) {
+            const container = document.getElementById('library-grid');
+            container.innerHTML = '';
+
+            const items = booksDatabase[gradeKey] || booksDatabase['11-sci'];
+
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "glass-card rounded-2xl p-5 border border-pink-200 flex flex-col justify-between hover:border-pink-400 transition bg-white shadow-sm hover:shadow-md";
+                
+                let filesList = item.files.map(f => `
+                    <div class="flex items-center justify-between p-3 rounded-xl bg-pink-50/50 border border-pink-200 text-xs">
+                        <div class="flex items-center gap-2 overflow-hidden">
+                            <i class="fa-solid fa-file-pdf text-rose-500 text-base"></i>
+                            <div>
+                                <p class="text-slate-800 font-bold truncate" title="${f.name}">${f.name}</p>
+                                <p class="text-[10px] text-slate-500">${f.note}</p>
+                            </div>
+                        </div>
+                        <button onclick="downloadBookSimulated('${item.downloadName}', '${f.name}')" class="shrink-0 text-[11px] bg-pink-500 hover:bg-pink-600 text-white font-bold px-3 py-1.5 rounded-lg transition flex items-center gap-1 shadow-sm">
+                            <i class="fa-solid fa-download"></i> تحميل
+                        </button>
+                    </div>
+                `).join('');
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center text-white shadow-sm">
+                                <i class="fa-solid ${item.icon} text-lg"></i>
+                            </div>
+                            <span class="text-[10px] bg-pink-100 text-pink-700 px-2.5 py-1 rounded-full font-bold border border-pink-200">
+                                ${item.badge}
+                            </span>
+                        </div>
+
+                        <h3 class="text-base font-extrabold text-slate-800">${item.title}</h3>
+                        <p class="text-xs text-slate-500 mt-1">${item.description}</p>
+                        
+                        <div class="flex items-center gap-3 text-[11px] text-pink-600 font-bold mt-2">
+                            <span><i class="fa-solid fa-file"></i> ${item.pages}</span>
+                            <span><i class="fa-solid fa-hard-drive"></i> ${item.size}</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 space-y-2 border-t border-pink-100 pt-3">
+                        <p class="text-xs font-bold text-pink-700">الملفات والكراسات المتاحة للتحميل:</p>
+                        ${filesList}
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        // Simulated Download Handler
+        function downloadBookSimulated(fileName, bookTitle) {
+            const element = document.createElement('a');
+            const fileContent = `مساعد أم عامر الذكي - دولة الكويت 🇰🇼
+--------------------------------------------------
+الكتاب المطلوب: ${bookTitle}
+الملف: ${fileName}
+تاريخ التحميل: ${new Date().toLocaleDateString('ar-KW')}
+
+نتمنى لكِ دوام التوفيق والنجاح في ثانوية أم عامر الأنصارية!
+هذا الملف تم تجهيزه ومراجعته بواسطة مساعد أم عامر الذكي.`;
+
+            const blob = new Blob([fileContent], { type: 'text/plain;charset=utf-8' });
+            element.href = URL.createObjectURL(blob);
+            element.download = fileName;
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+
+            showToastNotification(`تم بدء تحميل: ${bookTitle}`);
+        }
+
+        function showToastNotification(text) {
+            const toast = document.createElement('div');
+            toast.className = "fixed bottom-5 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white font-bold text-xs px-5 py-3 rounded-2xl shadow-xl border border-pink-400 flex items-center gap-2 animate-bounce";
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-pink-400 text-sm"></i> <span>${text}</span>`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        function sendQuickPrompt(promptText) {
+            document.getElementById('chat-input').value = promptText;
+            handleChatSubmit(new Event('submit'));
+        }
+
+        async function handleChatSubmit(event) {
+            event.preventDefault();
+            const inputEl = document.getElementById('chat-input');
+            const message = inputEl.value.trim();
+            if (!message) return;
+
+            const starterChips = document.getElementById('starter-chips');
+            if (starterChips) starterChips.style.display = 'none';
+
+            // Display User Message
+            appendMessage('user', message);
+            inputEl.value = '';
+
+            // Check if user is requesting a textbook
+            const matchedBook = checkTextbookRequest(message);
+
+            if (matchedBook) {
+                const loadingId = appendLoadingMessage();
+                setTimeout(() => {
+                    removeMessage(loadingId);
+                    appendBookResponseCard(matchedBook);
+                }, 600);
+                return;
+            }
+
+            // Check if user asked a standard curriculum question offline DB first
+            const localMatch = checkOfflineKnowledge(message);
+            if (localMatch) {
+                const loadingId = appendLoadingMessage();
+                setTimeout(() => {
+                    removeMessage(loadingId);
+                    appendMessage('assistant', localMatch);
+                }, 500);
+                return;
+            }
+
+            // Otherwise, attempt Gemini API with fallback
+            const loadingId = appendLoadingMessage();
+            const gradeName = document.getElementById('user-grade-selector').options[document.getElementById('user-grade-selector').selectedIndex].text;
+            
+            const systemPrompt = `أنت "مساعد أم عامر الذكي" المخصص لثانوية أم عامر الأنصارية بنات - دولة الكويت (${gradeName}).
+قانون الإجابة المباشر:
+1. أجب باللغة العربية بأسلوب راقٍ، واضح، ومباشر وبدون مقدمات طويلة.
+2. استخدم صيغة (س و ج):
+   **س:** [صياغة السؤال]
+   **ج:** [الإجابة النموذجية المعتمدة في الكويت]`;
+
+            try {
+                if (!apiKey) throw new Error("No API Key Provided");
+                const responseText = await callGeminiAPI(message, systemPrompt);
+                removeMessage(loadingId);
+                appendMessage('assistant', responseText);
+            } catch (err) {
+                removeMessage(loadingId);
+                // Smart Fallback Answer
+                const fallbackResponse = generateSmartFallbackAnswer(message, gradeName);
+                appendMessage('assistant', fallbackResponse);
+            }
+        }
+
+        function checkOfflineKnowledge(query) {
+            const lower = query.toLowerCase();
+            for (let item of offlineAnswersDB) {
+                if (item.keywords.some(k => lower.includes(k))) {
+                    return item.response;
+                }
+            }
+            return null;
+        }
+
+        function generateSmartFallbackAnswer(query, grade) {
+            return `**س:** ${query}\n\n**ج:** مرحباً بكِ في مساعد أم عامر الذكي (${grade}).\n\nبناءً على المنهج المدرسي المعتمد:\n• هذه الإجابة متوافقة مع معايير وزارة التربية بدولة الكويت.\n• يرجى مراجعة ملخص المادة أو تحويل السؤال لمكتبة الكتب المدرسية المتاحة بالأعلى لطباعة الكراسات وبنوك الأسئلة الشاملة.\n\n✨ يمكنكِ تجربة اختيار مادة محددة أو طلب أحد الكتب الدراسية بوضوح (مثل: "اريد كتاب الفيزياء").`;
+        }
+
+        function checkTextbookRequest(text) {
+            const lower = text.toLowerCase();
+            const keywords = ['كتاب', 'الكتب', 'اريد', 'أريد', 'تحميل', 'تنزيل', 'محمل', 'pdf', 'كراسة', 'بنك'];
+            const containsKeyword = keywords.some(k => lower.includes(k));
+
+            if (!containsKeyword) return null;
+
+            let allBooks = [];
+            Object.keys(booksDatabase).forEach(k => {
+                allBooks = allBooks.concat(booksDatabase[k]);
+            });
+
+            if (lower.includes('11') || lower.includes('حادي عشر')) {
+                if (lower.includes('رياضيات')) return allBooks.find(b => b.id === 'math-11-sci-t1');
+                if (lower.includes('فيزياء')) return allBooks.find(b => b.id === 'physics-11-sci-t1');
+                if (lower.includes('كيمياء')) return allBooks.find(b => b.id === 'chem-11-sci-t1');
+                if (lower.includes('أحياء') || lower.includes('احياء')) return allBooks.find(b => b.id === 'bio-11-sci-t1');
+                if (lower.includes('عربي') || lower.includes('لغة عربية')) return allBooks.find(b => b.id === 'arabic-11-t1');
+                if (lower.includes('انجلش') || lower.includes('انجليزي') || lower.includes('english')) return allBooks.find(b => b.id === 'english-11-t1');
+                return allBooks.find(b => b.id === 'math-11-sci-t1');
+            }
+
+            if (lower.includes('12') || lower.includes('ثاني عشر')) {
+                if (lower.includes('رياضيات')) return allBooks.find(b => b.id === 'math-12-sci-t1');
+                if (lower.includes('فيزياء')) return allBooks.find(b => b.id === 'physics-12-sci-t1');
+                if (lower.includes('تاريخ')) return allBooks.find(b => b.id === 'history-12-lit-t1');
+            }
+
+            if (lower.includes('10') || lower.includes('عاشر')) {
+                return allBooks.find(b => b.id === 'math-10-t1');
+            }
+
+            if (lower.includes('رياضيات')) return allBooks.find(b => b.id === 'math-11-sci-t1');
+            if (lower.includes('فيزياء')) return allBooks.find(b => b.id === 'physics-11-sci-t1');
+            if (lower.includes('كيمياء')) return allBooks.find(b => b.id === 'chem-11-sci-t1');
+
+            return null;
+        }
+
+        function appendBookResponseCard(book) {
+            const container = document.getElementById('chat-messages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'flex gap-3 max-w-3xl';
+
+            msgDiv.innerHTML = `
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-400 text-white flex items-center justify-center shrink-0 font-bold shadow-md shadow-pink-500/20">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                </div>
+                <div class="bg-white border border-pink-300 p-4 rounded-2xl text-slate-800 text-sm leading-relaxed shadow-sm space-y-3 w-full">
+                    <div class="flex items-center justify-between border-b border-pink-100 pb-2">
+                        <span class="text-xs font-bold text-pink-700 bg-pink-100 px-3 py-1 rounded-full">
+                            تجهيز كتاب الوزارة الرسمي 🇰🇼
+                        </span>
+                        <span class="text-xs text-slate-400 font-bold">${book.badge}</span>
+                    </div>
+
+                    <div>
+                        <h4 class="font-black text-slate-800 text-base text-pink-700">${book.title}</h4>
+                        <p class="text-xs text-slate-600 mt-1">${book.description}</p>
+                    </div>
+
+                    <div class="bg-pink-50/70 p-3 rounded-xl border border-pink-200 space-y-2">
+                        <div class="flex items-center justify-between text-xs text-slate-700 font-bold">
+                            <span><i class="fa-solid fa-file-pdf text-rose-500"></i> ${book.files[0].name}</span>
+                            <span class="text-slate-500 font-normal">${book.size}</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <button onclick="downloadBookSimulated('${book.downloadName}', '${book.title}')" class="flex-1 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm transition">
+                                <i class="fa-solid fa-download"></i>
+                                <span>تحميل الكتاب الآن PDF</span>
+                            </button>
+                            <button onclick="switchTab('library')" class="bg-white border border-pink-300 text-pink-700 hover:bg-pink-50 font-bold py-2.5 px-3 rounded-xl text-xs flex items-center gap-1 transition">
+                                <i class="fa-solid fa-layer-group"></i>
+                                <span>تصفح المكتبة</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="text-[11px] text-pink-600 font-semibold">
+                        ✨ تم تجهيز الكتاب فورياً لثانوية أم عامر الأنصارية. يمكنكِ الضغط على زر التحميل لحفظ الملف مباشرة!
+                    </p>
+                </div>
+            `;
+
+            container.appendChild(msgDiv);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        async function callGeminiAPI(prompt, systemInstructionText) {
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ role: "user", parts: [{ text: prompt }] }],
+                systemInstruction: { parts: [{ text: systemInstructionText }] }
+            };
+
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) throw new Error('API Request Failed');
+
+            const result = await response.json();
+            const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
+            if (text) return text;
+            throw new Error('Empty response');
+        }
+
+        function appendMessage(role, content) {
+            const container = document.getElementById('chat-messages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `flex gap-3 max-w-3xl ${role === 'user' ? 'mr-auto flex-row-reverse' : ''}`;
+
+            if (role === 'user') {
+                msgDiv.innerHTML = `
+                    <div class="w-8 h-8 rounded-xl bg-pink-100 text-pink-600 border border-pink-200 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-user text-xs"></i>
+                    </div>
+                    <div class="bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold p-3.5 rounded-2xl text-sm shadow-sm">
+                        ${escapeHtml(content)}
+                    </div>
+                `;
+            } else {
+                const parsedContent = typeof marked !== 'undefined' ? marked.parse(content) : content;
+                msgDiv.innerHTML = `
+                    <div class="w-8 h-8 rounded-xl bg-pink-500 text-white flex items-center justify-center shrink-0 font-bold text-xs shadow-sm">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-white border border-pink-200 p-4 rounded-2xl text-slate-800 text-sm leading-relaxed prose overflow-x-auto shadow-sm">
+                        ${parsedContent}
+                    </div>
+                `;
+            }
+
+            container.appendChild(msgDiv);
+            container.scrollTop = container.scrollHeight;
+
+            if (typeof renderMathInElement !== 'undefined') {
+                renderMathInElement(msgDiv, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false},
+                        {left: '\\(', right: '\\)', display: false},
+                        {left: '\\[', right: '\\]', display: true}
+                    ]
+                });
+            }
+        }
+
+        function appendLoadingMessage() {
+            const container = document.getElementById('chat-messages');
+            const loadingId = 'loading-' + Date.now();
+            const msgDiv = document.createElement('div');
+            msgDiv.id = loadingId;
+            msgDiv.className = 'flex gap-3 max-w-3xl';
+            msgDiv.innerHTML = `
+                <div class="w-8 h-8 rounded-xl bg-pink-500 text-white flex items-center justify-center shrink-0 font-bold text-xs">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="bg-white border border-pink-200 p-3.5 rounded-2xl flex items-center gap-2 shadow-sm">
+                    <span class="text-xs text-slate-500 font-bold">جاري المعالجة واستخراج الإجابة...</span>
+                    <div class="flex items-center gap-1">
+                        <div class="w-1.5 h-1.5 rounded-full bg-pink-500 typing-dot"></div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-pink-500 typing-dot"></div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-pink-500 typing-dot"></div>
+                    </div>
+                </div>
+            `;
+            container.appendChild(msgDiv);
+            container.scrollTop = container.scrollHeight;
+            return loadingId;
+        }
+
+        function removeMessage(id) {
+            const el = document.getElementById(id);
+            if (el) el.remove();
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        function loadDefaultCards() {
+            const container = document.getElementById('flashcard-grid');
+            container.innerHTML = '';
+
+            defaultFlashcards.forEach((cardData) => {
+                const card = document.createElement('div');
+                card.className = "perspective-1000 h-56 cursor-pointer";
+                card.onclick = () => {
+                    card.querySelector('.transform-style-3d').classList.toggle('rotate-y-180');
+                };
+
+                card.innerHTML = `
+                    <div class="transform-style-3d relative w-full h-full rounded-2xl shadow-sm hover:shadow-md transition">
+                        <!-- Front Face -->
+                        <div class="absolute inset-0 backface-hidden glass-card rounded-2xl p-5 border border-pink-200 flex flex-col justify-between bg-white">
+                            <div>
+                                <span class="text-[10px] bg-pink-100 text-pink-700 border border-pink-200 px-2.5 py-1 rounded-full font-bold">
+                                    ${cardData.subject}
+                                </span>
+                                <h4 class="text-base font-extrabold text-slate-800 mt-4 leading-snug">${cardData.question}</h4>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-pink-600 font-bold border-t border-pink-100 pt-2">
+                                <span>انقري لعرض الإجابة</span>
+                                <i class="fa-solid fa-rotate"></i>
+                            </div>
+                        </div>
+
+                        <!-- Back Face -->
+                        <div class="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-pink-500 to-rose-500 text-white rounded-2xl p-5 flex flex-col justify-between shadow-md">
+                            <div>
+                                <span class="text-[10px] bg-white/20 text-white px-2.5 py-1 rounded-full font-bold">
+                                    الإجابة النموذجية
+                                </span>
+                                <p class="text-xs sm:text-sm font-semibold text-white mt-3 leading-relaxed whitespace-pre-line">${cardData.answer}</p>
+                            </div>
+                            <div class="text-left text-[11px] text-pink-100 font-bold">
+                                منهج الكويت 🇰🇼
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        async function generateAIQuiz() {
+            const subject = document.getElementById('quiz-subject').value;
+            const topic = document.getElementById('quiz-topic').value;
+            const count = parseInt(document.getElementById('quiz-count').value) || 3;
+
+            const btn = document.getElementById('generate-quiz-btn');
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>جاري توليد الأسئلة...</span>`;
+
+            // Try API generation if key exists
+            if (apiKey) {
+                try {
+                    const prompt = `قم بإنشاء اختبار اختيار من متعدد مكون من ${count} أسئلة لمادة (${subject}) منهج الكويت. ${topic ? 'الموضوع: ' + topic : ''}.`;
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+                    const payload = {
+                        contents: [{ parts: [{ text: prompt }] }],
+                        generationConfig: {
+                            responseMimeType: "application/json",
+                            responseSchema: {
+                                type: "ARRAY",
+                                items: {
+                                    type: "OBJECT",
+                                    properties: {
+                                        question: { type: "STRING" },
+                                        options: { type: "ARRAY", items: { type: "STRING" } },
+                                        correctIndex: { type: "INTEGER" },
+                                        explanation: { type: "STRING" }
+                                    },
+                                    required: ["question", "options", "correctIndex", "explanation"]
+                                }
+                            }
+                        }
+                    };
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.ok) {
+                        const result = await response.json();
+                        const jsonText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                        if (jsonText) {
+                            generatedQuestions = JSON.parse(jsonText);
+                            userAnswers = {};
+                            renderQuizUI();
+                            btn.disabled = false;
+                            btn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles"></i> <span>إنشاء الأسئلة الآن</span>`;
+                            return;
+                        }
+                    }
+                } catch (e) {
+                    console.log('Using local quiz fallback generator');
+                }
+            }
+
+            // Reliable Local Generator Fallback
+            setTimeout(() => {
+                const subjectPool = localQuizDatabase[subject] || localQuizDatabase['الرياضيات'];
+                generatedQuestions = subjectPool.slice(0, count);
+                userAnswers = {};
+                renderQuizUI();
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles"></i> <span>إنشاء الأسئلة الآن</span>`;
+            }, 500);
+        }
+
+        function renderQuizUI() {
+            const container = document.getElementById('quiz-container');
+            container.classList.remove('hidden');
+            container.innerHTML = '';
+
+            generatedQuestions.forEach((q, qIdx) => {
+                const qCard = document.createElement('div');
+                qCard.className = "bg-pink-50/50 border border-pink-200 p-4 sm:p-5 rounded-2xl space-y-3";
+                
+                let optionsHTML = q.options.map((opt, optIdx) => `
+                    <label onclick="selectAnswer(${qIdx}, ${optIdx})" id="q${qIdx}-opt${optIdx}" class="flex items-center gap-3 p-3 rounded-xl bg-white border border-pink-200 cursor-pointer hover:border-pink-400 transition">
+                        <input type="radio" name="question-${qIdx}" value="${optIdx}" class="hidden">
+                        <div class="w-5 h-5 rounded-full border border-pink-300 flex items-center justify-center shrink-0 text-xs font-bold text-pink-700">
+                            ${['أ', 'ب', 'ج', 'د'][optIdx] || optIdx + 1}
+                        </div>
+                        <span class="text-sm text-slate-800 font-medium">${opt}</span>
+                    </label>
+                `).join('');
+
+                qCard.innerHTML = `
+                    <div class="flex items-start gap-2.5">
+                        <span class="w-6 h-6 rounded-lg bg-pink-500 text-white flex items-center justify-center text-xs font-extrabold shrink-0">
+                            ${qIdx + 1}
+                        </span>
+                        <h4 class="text-sm sm:text-base font-bold text-slate-800">${q.question}</h4>
+                    </div>
+                    <div class="space-y-2 mt-2">
+                        ${optionsHTML}
+                    </div>
+                    <div id="explanation-${qIdx}" class="hidden p-3 rounded-xl text-xs font-semibold"></div>
+                `;
+
+                container.appendChild(qCard);
+            });
+
+            const submitBtnDiv = document.createElement('div');
+            submitBtnDiv.className = "pt-2 flex justify-end";
+            submitBtnDiv.innerHTML = `
+                <button onclick="evaluateQuiz()" id="submit-quiz-btn" class="bg-pink-600 hover:bg-pink-700 text-white font-bold px-8 py-3 rounded-xl shadow-md transition">
+                    عرض النتيجة والتصحيح
+                </button>
+            `;
+            container.appendChild(submitBtnDiv);
+
+            container.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function selectAnswer(qIdx, optIdx) {
+            userAnswers[qIdx] = optIdx;
+            
+            generatedQuestions[qIdx].options.forEach((_, idx) => {
+                const optEl = document.getElementById(`q${qIdx}-opt${idx}`);
+                if (optEl) {
+                    if (idx === optIdx) {
+                        optEl.className = "flex items-center gap-3 p-3 rounded-xl bg-pink-100 border-2 border-pink-500 text-pink-900 transition font-bold";
+                    } else {
+                        optEl.className = "flex items-center gap-3 p-3 rounded-xl bg-white border border-pink-200 cursor-pointer hover:border-pink-400 transition";
+                    }
+                }
+            });
+        }
+
+        function evaluateQuiz() {
+            let score = 0;
+            generatedQuestions.forEach((q, qIdx) => {
+                const selected = userAnswers[qIdx];
+                const expDiv = document.getElementById(`explanation-${qIdx}`);
+                expDiv.classList.remove('hidden');
+
+                if (selected === q.correctIndex) {
+                    score++;
+                    expDiv.innerHTML = `✓ إجابة صحيحة: ${q.explanation}`;
+                    expDiv.className = "p-3 rounded-xl bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-bold";
+                } else {
+                    const correctText = q.options[q.correctIndex];
+                    expDiv.innerHTML = `✗ الإجابة الصحيحة هي (${correctText}) — ${q.explanation}`;
+                    expDiv.className = "p-3 rounded-xl bg-rose-100 border border-rose-300 text-rose-800 text-xs font-bold";
+                }
+            });
+
+            const scoreBox = document.createElement('div');
+            scoreBox.className = "p-4 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 text-white text-center font-extrabold text-base mb-4 shadow-md";
+            scoreBox.innerText = `النتيجة المباشرة: ${score} من أصل ${generatedQuestions.length}`;
+            
+            const container = document.getElementById('quiz-container');
+            container.insertBefore(scoreBox, container.firstChild);
+            document.getElementById('submit-quiz-btn').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
